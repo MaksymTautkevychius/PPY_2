@@ -74,15 +74,18 @@ Extend the previous Python program to include tuples. Now, in addition to creati
 # Input
 input_numbers = input("Enter a series of space-separated integers: ")
 
-# Convert Input:
+# Convert Input
+numbers_list = list(map(int, input_numbers.split()))
+numbers_tuple = tuple(numbers_list)
 
-
-# Sorting:
-
+# Sorting
+numbers_list.sort()
+sorted_tuple = tuple(sorted(numbers_tuple))
 
 # Print Output
 print("Sorted list:", numbers_list)
 print("Sorted tuple:", sorted_tuple)
+
 
 """5.
 Extend the previous Python program to demonstrate the manipulation of lists using the append(), insert(), and remove() functions, and to emphasize the immutability of tuples.
@@ -111,30 +114,32 @@ Extend the previous Python program to demonstrate the manipulation of lists usin
 input_numbers = input("Enter a series of space-separated integers: ")
 
 # Convert Input
-
+numbers_list = list(map(int, input_numbers.split()))
+numbers_tuple = tuple(numbers_list)
 
 # Manipulate List
-#   Append 10 to the list
-#   Insert 20 at index 2
-#   Remove one elementfrom the list
+numbers_list.append(10)  # Append 10 to the list
+numbers_list.insert(2, 20)  # Insert 20 at index 2
+numbers_list.remove(8)  # Remove one element from the list
 
 # Attempt to Modify Tuple (this will raise an error)
 try:
-    #   Append 10 to the tuple
-except AttributeError:
+    numbers_tuple += (10,)  # Attempt to append 10 to the tuple
+except TypeError:
     print("Tuples are immutable and cannot be modified.")
 try:
-    #   Insert 20 at index 2
-except AttributeError:
+    numbers_tuple = numbers_tuple[:2] + (20,) + numbers_tuple[2:]  # Attempt to insert 20 at index 2
+except TypeError:
     pass  # Insert operation will also raise an error
 try:
-    #   Remove one element  from the tuple
+    numbers_tuple.remove(8)  # Attempt to remove one element from the tuple
 except AttributeError:
     pass  # Remove operation will also raise an error
 
 # Print Output
 print("Modified list:", numbers_list)
 print("Tuple remains unchanged:", numbers_tuple)
+
 
 """--------------------------------------------------------------------------------
 1. **Set**:

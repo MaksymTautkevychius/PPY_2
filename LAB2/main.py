@@ -118,27 +118,28 @@ numbers_list = list(map(int, input_numbers.split()))
 numbers_tuple = tuple(numbers_list)
 
 # Manipulate List
-numbers_list.append(10)  # Append 10 to the list
-numbers_list.insert(2, 20)  # Insert 20 at index 2
-numbers_list.remove(8)  # Remove one element from the list
+numbers_list.append(10)
+numbers_list.insert(2, 20)
+numbers_list.remove(8)
 
 # Attempt to Modify Tuple (this will raise an error)
 try:
-    numbers_tuple += (10,)  # Attempt to append 10 to the tuple
+    numbers_tuple += (10,)
 except TypeError:
     print("Tuples are immutable and cannot be modified.")
 try:
-    numbers_tuple = numbers_tuple[:2] + (20,) + numbers_tuple[2:]  # Attempt to insert 20 at index 2
+    numbers_tuple = numbers_tuple[:2] + (20,) + numbers_tuple[2:]
 except TypeError:
-    pass  # Insert operation will also raise an error
+    pass
 try:
-    numbers_tuple.remove(8)  # Attempt to remove one element from the tuple
+    numbers_tuple.remove(8)
 except AttributeError:
-    pass  # Remove operation will also raise an error
+    pass
 
 # Print Output
 print("Modified list:", numbers_list)
 print("Tuple remains unchanged:", numbers_tuple)
+
 
 
 """--------------------------------------------------------------------------------
